@@ -57,9 +57,9 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-8">
                     <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="menu.html" data-i18n="nav_menu">Menu</a>
-                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="#" data-i18n="nav_story">Our Story</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="story.html" data-i18n="nav_story">Our Story</a>
                     <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="reservations.html" data-i18n="nav_private_tents">Private Tents</a>
-                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="#" data-i18n="nav_contact">Contact</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="contact.html" data-i18n="nav_contact">Contact</a>
                 </div>
                 <!-- Actions -->
                 <div class="flex items-center gap-4">
@@ -132,16 +132,16 @@
                         <h3 class="text-3xl md:text-4xl font-bold dark:text-white text-charcoal" data-i18n="section_charcoal">From the Charcoal Pit</h3>
                     </div>
                     <div class="flex gap-2">
-                        <button class="size-10 rounded-full border border-current flex items-center justify-center hover:bg-primary/10 transition-colors">
+                        <button id="scroll-left" class="size-10 rounded-full border border-current flex items-center justify-center hover:bg-primary/10 transition-colors">
                             <span class="material-symbols-outlined">arrow_back</span>
                         </button>
-                        <button class="size-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:bg-yellow-500 transition-colors">
+                        <button id="scroll-right" class="size-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:bg-yellow-500 transition-colors">
                             <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
                     </div>
                 </div>
                 <!-- Horizontal Scroll Container -->
-                <div class="flex overflow-x-auto hide-scrollbar gap-6 pb-4 snap-x snap-mandatory">
+                <div id="specialties-container" class="flex overflow-x-auto hide-scrollbar gap-6 pb-4 snap-x snap-mandatory">
                     <!-- Card 1 -->
                     <div class="min-w-[300px] md:min-w-[380px] snap-center group cursor-pointer">
                         <div class="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
