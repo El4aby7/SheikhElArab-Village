@@ -1,7 +1,7 @@
 // Translations Dictionary
 const translations = {
     "en": {
-        "brand_name": "Abu Khaled Village",
+        "brand_name": "Sheikh El Arab Village",
         "nav_menu": "Menu",
         "nav_story": "Our Story",
         "nav_private_tents": "Private Tents",
@@ -99,7 +99,7 @@ const translations = {
         "trust_rating": "4.9/5 Guest Rating"
     },
     "ar": {
-        "brand_name": "قرية أبو خالد",
+        "brand_name": "قرية شيخ العرب",
         "nav_menu": "القائمة",
         "nav_story": "قصتنا",
         "nav_private_tents": "الخيام الخاصة",

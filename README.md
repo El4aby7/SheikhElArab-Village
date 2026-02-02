@@ -1,11 +1,11 @@
-# Abu Khaled Village Website
+# Sheikh El Arab Village Website
 
-This project implements the website for **Abu Khaled Village**, a Middle Eastern dining experience. The website is built using HTML, Tailwind CSS, and JavaScript.
+This project implements the website for **Sheikh El Arab Village**, a Middle Eastern dining experience. The website is built using HTML, Tailwind CSS, and JavaScript.
 
 ## Features Implemented
 
 1.  **Branding & Currency**:
-    *   Updated the site branding to **Abu Khaled Village** across all pages.
+    *   Updated the site branding to **Sheikh El Arab Village** across all pages.
     *   Changed all pricing currency to **L.E** (Egyptian Pounds).
 
 2.  **Theme Customization**:
