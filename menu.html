@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Abu Khaled Village - Menu</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d42111",
+                        "background-light": "#F9F7F2", /* Parchment / Sand */
+                        "background-dark": "#221210", /* Deep Warm Dark */
+                        "sand-text": "#2D2422",
+                        "sand-muted": "#6D5D59",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'pattern-light': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d42111' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar for the menu list */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #d4d4d4;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-sand-text dark:text-gray-100 overflow-hidden h-screen w-full transition-colors duration-300">
+    <!-- Main Split Layout -->
+    <div class="flex h-full w-full">
+        <!-- Left Panel: Dynamic Visual Canvas (Hidden on mobile) -->
+        <div class="hidden lg:block w-1/2 h-full relative overflow-hidden group">
+            <!-- Main Hero Image -->
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-105" data-alt="Close up of delicious lamb mandi platter with rice and nuts" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDD6_U2q_6_KsYDvUKS4P2BMiwp5qzPfG6eQyEv84qv5vsPpLQfB34aRw7_X9hfZwKuBS1kr32wa_JdF62NNZnZwAHBgTd2pJl5JB42ynASz62f9f4YH17V8S7xxoZsSo238Tzn5ExDCUgHbwo6hqV3tCy3zsd0xvuuUU7OvfKPoaMe0QosyVOUa5hgMhExOt33BjJGgIhuWPKDGzlfAZHVr-k9dhaKvIAmNiYFMWCT6Odi2ehS1QnvOiCVWK9DmKK6hfurnSJgrAU");'>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+            </div>
+            <!-- Branding overlay on image -->
+            <div class="absolute top-8 left-8 text-white z-10">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="material-symbols-outlined text-primary text-4xl">restaurant_menu</span>
+                    <h1 class="text-2xl font-bold tracking-tight" data-i18n="brand_name">Abu Khaled Village</h1>
+                </div>
+                <p class="text-white/80 text-sm font-medium tracking-wide uppercase" data-i18n="hero_subtitle">Authentic Bedouin Cuisine</p>
+            </div>
+            <!-- Contextual Caption (Dynamic in real implementation) -->
+            <div class="absolute bottom-12 left-12 right-12 text-white z-10">
+                <h2 class="text-5xl font-black mb-2 leading-tight" data-i18n="dish_highlight_title">Lamb Haneeth</h2>
+                <p class="text-xl text-white/90 font-light max-w-md" data-i18n="dish_highlight_desc">Slow-cooked for 12 hours in a traditional underground clay oven.</p>
+            </div>
+        </div>
+        <!-- Right Panel: Scrollable Menu -->
+        <div class="w-full lg:w-1/2 h-full relative flex flex-col bg-background-light dark:bg-background-dark bg-pattern-light transition-colors duration-300">
+            <!-- Bedouin Corner Decoration (Top Right) -->
+            <div class="absolute top-0 right-0 w-32 h-32 pointer-events-none opacity-20 dark:opacity-10 z-0">
+                <svg class="text-primary w-full h-full" fill="currentColor" viewbox="0 0 100 100">
+                    <path d="M100 0 L100 50 L50 0 Z M80 0 L100 20 L100 0 Z"></path>
+                    <circle cx="85" cy="15" r="3"></circle>
+                    <circle cx="92" cy="8" r="3"></circle>
+                </svg>
+            </div>
+            <!-- Sticky Navigation / Header inside Right Panel -->
+            <header class="sticky top-0 z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-stone-200 dark:border-stone-800 px-6 py-4 lg:px-12 flex items-center justify-between shrink-0">
+                <div class="lg:hidden flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined">restaurant_menu</span>
+                    <span class="font-bold text-sand-text dark:text-white" data-i18n="brand_name">Abu Khaled Village</span>
+                </div>
+                <nav class="hidden sm:flex items-center gap-6 ml-auto lg:ml-0 lg:w-full lg:justify-end">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html" data-i18n="nav_home">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#" data-i18n="nav_story">Our Story</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#" data-i18n="nav_locations">Locations</a>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 hover:text-primary transition-colors rounded-full" aria-label="Toggle Dark Mode">
+                        <span class="material-symbols-outlined">dark_mode</span>
+                    </button>
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" class="p-2 hover:text-primary transition-colors rounded-full text-sm font-bold" aria-label="Toggle Language">
+                        AR
+                    </button>
+
+                    <a href="reservations.html" class="bg-primary hover:bg-red-700 text-white text-sm font-bold py-2 px-5 rounded-md transition-colors shadow-sm" data-i18n="btn_book_table">
+                        Book a Table
+                    </a>
+                </nav>
+            </header>
+            <!-- Scrollable Content Area -->
+            <div class="flex-1 overflow-y-auto custom-scrollbar px-6 lg:px-16 py-8 relative z-10">
+                <!-- Page Heading -->
+                <div class="mb-12 mt-4">
+                    <div class="flex items-center gap-2 text-primary mb-2">
+                        <span class="h-px w-8 bg-primary"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest">Est. 1998</span>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-black text-sand-text dark:text-white tracking-tight mb-4" data-i18n="menu_title">Our Menu</h2>
+                    <p class="text-sand-muted dark:text-gray-400 text-lg max-w-md leading-relaxed" data-i18n="menu_desc">
+                        A journey through the desert's most cherished recipes, featuring premium meats and ancient spice blends.
+                    </p>
+                </div>
+                <!-- Menu Section 1: Mandi -->
+                <div class="mb-16">
+                    <div class="sticky top-0 -mx-6 px-6 lg:-mx-16 lg:px-16 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md z-30 flex items-center justify-between border-b border-stone-200 dark:border-stone-800 mb-6">
+                        <h3 class="text-xl font-bold text-sand-text dark:text-white flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">rice_bowl</span>
+                            <span data-i18n="section_mandi">The Mandi Pit</span>
+                        </h3>
+                    </div>
+                    <!-- Item 1 -->
+                    <div class="group flex flex-col sm:flex-row justify-between items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer border border-transparent hover:border-primary/10 mb-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h4 class="text-lg font-bold text-sand-text dark:text-white group-hover:text-primary transition-colors" data-i18n="dish_haneeth">Lamb Haneeth</h4>
+                                <div class="flex items-center text-amber-500" title="Chef's Choice">
+                                    <span class="material-symbols-outlined text-[18px] fill-current">star</span>
+                                </div>
+                            </div>
+                            <p class="text-sand-muted dark:text-gray-400 text-sm leading-relaxed" data-i18n="dish_haneeth_desc">
+                                Succulent lamb shoulder slow-roasted in foil to preserve juices, served over aromatic basmati rice.
+                            </p>
+                        </div>
+                        <div class="text-lg font-bold text-primary shrink-0">32 L.E</div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="group flex flex-col sm:flex-row justify-between items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer border border-transparent hover:border-primary/10 mb-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h4 class="text-lg font-bold text-sand-text dark:text-white group-hover:text-primary transition-colors" data-i18n="dish_madhbi">Chicken Madhbi</h4>
+                                <div class="flex items-center text-primary/80" title="Mild Spice">
+                                    <span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+                                </div>
+                            </div>
+                            <p class="text-sand-muted dark:text-gray-400 text-sm leading-relaxed" data-i18n="dish_madhbi_desc">
+                                Grilled chicken on hot stones, marinated in Bedouin herbs, offering a distinct smoky flavor.
+                            </p>
+                        </div>
+                        <div class="text-lg font-bold text-primary shrink-0">24 L.E</div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="group flex flex-col sm:flex-row justify-between items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer border border-transparent hover:border-primary/10 mb-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h4 class="text-lg font-bold text-sand-text dark:text-white group-hover:text-primary transition-colors" data-i18n="dish_zurbian">Shoulder Zurbian</h4>
+                            </div>
+                            <p class="text-sand-muted dark:text-gray-400 text-sm leading-relaxed" data-i18n="dish_zurbian_desc">
+                                A royal dish of tender meat cooked within a spiced yogurt sauce and potato infused rice.
+                            </p>
+                        </div>
+                        <div class="text-lg font-bold text-primary shrink-0">36 L.E</div>
+                    </div>
+                </div>
+                <!-- Menu Section 2: BBQ -->
+                <div class="mb-16">
+                    <div class="sticky top-0 -mx-6 px-6 lg:-mx-16 lg:px-16 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md z-30 flex items-center justify-between border-b border-stone-200 dark:border-stone-800 mb-6">
+                        <h3 class="text-xl font-bold text-sand-text dark:text-white flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">skillet</span>
+                            <span data-i18n="section_bbq">Egyptian BBQ</span>
+                        </h3>
+                    </div>
+                    <!-- Item 1 -->
+                    <div class="group flex flex-col sm:flex-row justify-between items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer border border-transparent hover:border-primary/10 mb-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h4 class="text-lg font-bold text-sand-text dark:text-white group-hover:text-primary transition-colors" data-i18n="dish_kofta">Traditional Kofta</h4>
+                                <div class="flex items-center text-amber-500" title="Chef's Choice">
+                                    <span class="material-symbols-outlined text-[18px] fill-current">star</span>
+                                </div>
+                            </div>
+                            <p class="text-sand-muted dark:text-gray-400 text-sm leading-relaxed" data-i18n="dish_kofta_desc">
+                                Minced lamb and beef mixed with parsley, onions, and spices, grilled on charcoal skewers.
+                            </p>
+                        </div>
+                        <div class="text-lg font-bold text-primary shrink-0">22 L.E</div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="group flex flex-col sm:flex-row justify-between items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer border border-transparent hover:border-primary/10 mb-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h4 class="text-lg font-bold text-sand-text dark:text-white group-hover:text-primary transition-colors" data-i18n="dish_tarb">Tarb</h4>
+                                <div class="flex items-center text-primary" title="Rich &amp; Fatty">
+                                    <span class="material-symbols-outlined text-[18px]">water_drop</span>
+                                </div>
+                            </div>
+                            <p class="text-sand-muted dark:text-gray-400 text-sm leading-relaxed" data-i18n="dish_tarb_desc">
+                                Kofta wrapped in a thin layer of lamb fat (caul fat) for an incredibly juicy and rich experience.
+                            </p>
+                        </div>
+                        <div class="text-lg font-bold text-primary shrink-0">26 L.E</div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="group flex flex-col sm:flex-row justify-between items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer border border-transparent hover:border-primary/10 mb-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <h4 class="text-lg font-bold text-sand-text dark:text-white group-hover:text-primary transition-colors" data-i18n="dish_shish">Shish Tawook</h4>
+                            </div>
+                            <p class="text-sand-muted dark:text-gray-400 text-sm leading-relaxed" data-i18n="dish_shish_desc">
+                                Chicken breast cubes marinated in yogurt, lemon, and garlic, grilled to perfection with peppers.
+                            </p>
+                        </div>
+                        <div class="text-lg font-bold text-primary shrink-0">20 L.E</div>
+                    </div>
+                </div>
+                <!-- Menu Section 3: Sides -->
+                <div class="mb-12">
+                    <div class="sticky top-0 -mx-6 px-6 lg:-mx-16 lg:px-16 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md z-30 flex items-center justify-between border-b border-stone-200 dark:border-stone-800 mb-6">
+                        <h3 class="text-xl font-bold text-sand-text dark:text-white flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">bakery_dining</span>
+                            <span data-i18n="section_souk">From the Souk</span>
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Side 1 -->
+                        <div class="group p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 hover:border-primary/30 transition-all shadow-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-sand-text dark:text-white" data-i18n="side_hummus">Hummus with Meat</h4>
+                                <span class="text-primary font-bold">12 L.E</span>
+                            </div>
+                            <p class="text-xs text-sand-muted dark:text-gray-400" data-i18n="side_hummus_desc">Creamy chickpea puree topped with sautéed minced lamb and pine nuts.</p>
+                        </div>
+                        <!-- Side 2 -->
+                        <div class="group p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 hover:border-primary/30 transition-all shadow-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-sand-text dark:text-white" data-i18n="side_baba">Baba Ganoush</h4>
+                                <span class="text-primary font-bold">9 L.E</span>
+                            </div>
+                            <p class="text-xs text-sand-muted dark:text-gray-400" data-i18n="side_baba_desc">Roasted eggplant dip mixed with tahini, olive oil, and pomegranate molasses.</p>
+                        </div>
+                        <!-- Side 3 -->
+                        <div class="group p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 hover:border-primary/30 transition-all shadow-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-sand-text dark:text-white" data-i18n="side_salad">Bedouin Salad</h4>
+                                <span class="text-primary font-bold">8 L.E</span>
+                            </div>
+                            <p class="text-xs text-sand-muted dark:text-gray-400" data-i18n="side_salad_desc">Fresh diced cucumbers, tomatoes, and parsley with a zesty lemon dressing.</p>
+                        </div>
+                        <!-- Side 4 -->
+                        <div class="group p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 hover:border-primary/30 transition-all shadow-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-sand-text dark:text-white" data-i18n="side_bread">Fresh Mulawah</h4>
+                                <span class="text-primary font-bold">4 L.E</span>
+                            </div>
+                            <p class="text-xs text-sand-muted dark:text-gray-400" data-i18n="side_bread_desc">Giant, flaky Yemeni bread baked fresh in the clay oven.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer / CTA -->
+                <div class="mt-8 pt-8 border-t border-stone-300 dark:border-stone-700 text-center pb-20">
+                    <p class="text-sm text-sand-muted dark:text-gray-500 mb-6 italic" data-i18n="footer_halal">
+                        All our meats are Halal and sourced from local farms. <br/> Please inform your server of any allergies.
+                    </p>
+                    <button class="w-full sm:w-auto bg-primary text-white text-base font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl hover:bg-red-700 transition-all transform hover:-translate-y-0.5" data-i18n="btn_download_pdf">
+                        Download PDF Menu
+                    </button>
+                </div>
+            </div>
+            <!-- Bottom Left Decorative Corner -->
+            <div class="absolute bottom-0 left-0 w-24 h-24 pointer-events-none opacity-10 rotate-180 z-0">
+                <svg class="text-primary w-full h-full" fill="currentColor" viewbox="0 0 100 100">
+                    <path d="M100 0 L100 50 L50 0 Z M80 0 L100 20 L100 0 Z"></path>
+                    <circle cx="85" cy="15" r="3"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
