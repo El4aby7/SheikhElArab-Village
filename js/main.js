@@ -93,6 +93,7 @@ const translations = {
         "res_total_est": "Total Estimate (Pre-payment not required)",
         "res_free": "Free Reservation",
         "btn_confirm_majlis": "Confirm Majlis Seating",
+        "btn_confirm_standard": "Confirm Standard Dining",
         "trust_instant": "Instant Confirmation",
         "trust_cancel": "No Cancellation Fee",
         "trust_rating": "4.9/5 Guest Rating"
@@ -190,6 +191,7 @@ const translations = {
         "res_total_est": "التقدير الإجمالي (الدفع المسبق غير مطلوب)",
         "res_free": "حجز مجاني",
         "btn_confirm_majlis": "تأكيد حجز المجلس",
+        "btn_confirm_standard": "تأكيد حجز الطاولة",
         "trust_instant": "تأكيد فوري",
         "trust_cancel": "بدون رسوم إلغاء",
         "trust_rating": "4.9/5 تقييم الضيوف"
@@ -263,5 +265,146 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.innerText = translations[lang][key];
             }
         });
+
+        // Flip arrow buttons in RTL
+        const scrollBtns = document.querySelectorAll('#scroll-left, #scroll-right');
+        scrollBtns.forEach(btn => {
+            if (lang === 'ar') {
+                btn.style.transform = 'scaleX(-1)';
+            } else {
+                btn.style.transform = 'none';
+            }
+        });
+    }
+
+    // Horizontal Scroll Logic for Specialties
+    const scrollContainer = document.getElementById('specialties-container');
+    const scrollLeftBtn = document.getElementById('scroll-left');
+    const scrollRightBtn = document.getElementById('scroll-right');
+
+    if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+        scrollLeftBtn.addEventListener('click', () => {
+            const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+            const amount = isRTL ? 300 : -300;
+            scrollContainer.scrollBy({ left: amount, behavior: 'smooth' });
+        });
+        scrollRightBtn.addEventListener('click', () => {
+            const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+            const amount = isRTL ? -300 : 300;
+            scrollContainer.scrollBy({ left: amount, behavior: 'smooth' });
+        });
+    }
+
+    // Reservations Logic
+    const expMajlis = document.getElementById('exp-majlis');
+    const expStandard = document.getElementById('exp-standard');
+
+    if (expMajlis && expStandard) {
+        // Experience Toggle
+        let activeExp = 'majlis';
+        const confirmText = document.getElementById('confirm-text');
+
+        function setExperience(type) {
+            activeExp = type;
+            if (type === 'majlis') {
+                expMajlis.classList.add('border-primary');
+                expMajlis.classList.remove('border-transparent');
+                expMajlis.querySelector('.absolute').classList.remove('hidden');
+
+                expStandard.classList.remove('border-primary');
+                expStandard.classList.add('border-transparent');
+                expStandard.querySelector('.absolute').classList.add('hidden');
+
+                // Update button text key
+                confirmText.setAttribute('data-i18n', 'btn_confirm_majlis');
+                const lang = localStorage.getItem('lang') || 'en';
+                confirmText.innerText = translations[lang]['btn_confirm_majlis'];
+            } else {
+                expStandard.classList.add('border-primary');
+                expStandard.classList.remove('border-transparent');
+                expStandard.querySelector('.absolute').classList.remove('hidden');
+
+                expMajlis.classList.remove('border-primary');
+                expMajlis.classList.add('border-transparent');
+                expMajlis.querySelector('.absolute').classList.add('hidden');
+
+                // Update button text key
+                confirmText.setAttribute('data-i18n', 'btn_confirm_standard');
+                const lang = localStorage.getItem('lang') || 'en';
+                confirmText.innerText = translations[lang]['btn_confirm_standard'];
+            }
+        }
+
+        expMajlis.addEventListener('click', () => setExperience('majlis'));
+        expStandard.addEventListener('click', () => setExperience('standard'));
+
+        // Date Selection
+        const dateContainer = document.getElementById('date-container');
+        if (dateContainer) {
+            const dateBtns = dateContainer.querySelectorAll('.date-btn');
+            dateBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    dateBtns.forEach(b => {
+                        b.classList.remove('bg-primary', 'text-[#181611]', 'border-primary', 'active');
+                        b.classList.add('bg-[#393528]', 'text-[#bab29c]', 'border-transparent');
+                    });
+                    btn.classList.remove('bg-[#393528]', 'text-[#bab29c]', 'border-transparent');
+                    btn.classList.add('bg-primary', 'text-[#181611]', 'border-primary', 'active');
+                });
+            });
+        }
+
+        // Time Selection
+        const timeContainer = document.getElementById('time-container');
+        if (timeContainer) {
+            const timeBtns = timeContainer.querySelectorAll('.time-btn');
+            timeBtns.forEach(btn => {
+                if (!btn.disabled) {
+                    btn.addEventListener('click', () => {
+                        timeBtns.forEach(b => {
+                            if (!b.disabled) {
+                                b.classList.remove('bg-primary/20', 'border-primary', 'text-primary', 'active');
+                                b.classList.add('border-[#393528]', 'text-[#bab29c]');
+                            }
+                        });
+                        btn.classList.remove('border-[#393528]', 'text-[#bab29c]');
+                        btn.classList.add('bg-primary/20', 'border-primary', 'text-primary', 'active');
+                    });
+                }
+            });
+        }
+
+        // Guest Count Logic
+        const guestCountEl = document.getElementById('guest-count');
+        const decreaseBtn = document.getElementById('guest-decrease');
+        const increaseBtn = document.getElementById('guest-increase');
+
+        if (guestCountEl && decreaseBtn && increaseBtn) {
+            let guests = 4;
+
+            decreaseBtn.addEventListener('click', () => {
+                if (guests > 1) {
+                    guests--;
+                    guestCountEl.textContent = guests;
+                }
+            });
+
+            increaseBtn.addEventListener('click', () => {
+                if (guests < 20) {
+                    guests++;
+                    guestCountEl.textContent = guests;
+                }
+            });
+        }
+
+        // Confirmation
+        const confirmBtn = document.getElementById('confirm-reservation');
+        if (confirmBtn) {
+            confirmBtn.addEventListener('click', () => {
+                const lang = localStorage.getItem('lang') || 'en';
+                const msg = lang === 'ar' ? 'تم استلام طلب الحجز الخاص بك!' : 'Reservation request received!';
+                alert(msg);
+            });
+        }
     }
 });

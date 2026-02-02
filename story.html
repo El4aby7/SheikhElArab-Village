@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Abu Khaled Village - Our Story</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eca413",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221c10",
+                        "charcoal": "#181611",
+                        "sienna": "#8B4513",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden antialiased selection:bg-primary selection:text-white transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-[#393328]">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-10 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 text-white">
+                    <div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined text-2xl">kebab_dining</span>
+                    </div>
+                    <a href="index.html" class="text-white text-xl font-bold tracking-tight" data-i18n="brand_name">Abu Khaled Village</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="menu.html" data-i18n="nav_menu">Menu</a>
+                    <a class="text-primary text-sm font-semibold" href="story.html" data-i18n="nav_story">Our Story</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="reservations.html" data-i18n="nav_private_tents">Private Tents</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="contact.html" data-i18n="nav_contact">Contact</a>
+                </div>
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 text-white hover:text-primary transition-colors rounded-full hover:bg-white/10" aria-label="Toggle Dark Mode">
+                        <span class="material-symbols-outlined">dark_mode</span>
+                    </button>
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" class="p-2 text-white hover:text-primary transition-colors rounded-full hover:bg-white/10 text-sm font-bold" aria-label="Toggle Language">
+                        AR
+                    </button>
+
+                    <button class="hidden sm:flex bg-primary hover:bg-yellow-500 text-background-dark px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-[0_0_15px_rgba(236,164,19,0.3)]" data-i18n="btn_order">
+                        Order Online
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-white">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 bg-background-light dark:bg-background-dark text-charcoal dark:text-white transition-colors duration-300 pt-32 pb-20 min-h-screen">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+            <h1 class="text-5xl md:text-7xl font-black text-charcoal dark:text-white mb-10 text-center" data-i18n="nav_story">Our Story</h1>
+            <div class="max-w-4xl mx-auto text-lg leading-relaxed text-gray-700 dark:text-gray-300 space-y-6">
+                <p>
+                    Established in the heart of the desert and brought to the city, Abu Khaled Village represents a journey of flavors and traditions passed down through generations.
+                </p>
+                <p>
+                    Our founders believed that food is not just sustenance but a way to bring people together. Inspired by the Bedouin hospitality where every guest is treated like family, we strive to create an atmosphere of warmth and generosity.
+                </p>
+                <p>
+                    From our slow-cooked Mandi prepared in traditional underground pits to our charcoal-grilled specialties, every dish tells a story of the ancient spice routes and the mastery of fire.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#12100c] border-t border-[#393328] pt-16 pb-8">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-3 text-white mb-6">
+                        <div class="flex items-center justify-center size-8 rounded-full bg-primary text-background-dark">
+                            <span class="material-symbols-outlined text-lg">kebab_dining</span>
+                        </div>
+                        <h2 class="text-white text-lg font-bold" data-i18n="brand_name">Abu Khaled Village</h2>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-i18n="footer_desc">
+                        Bringing authentic desert flavors to the modern city. Experience the warmth of Bedouin hospitality.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6" data-i18n="footer_links">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="menu.html" data-i18n="nav_menu">Our Menu</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="reservations.html" data-i18n="nav_private_tents">Private Tents</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#" data-i18n="footer_catering">Catering</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#" data-i18n="footer_gifts">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6" data-i18n="footer_connect">Connect</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Facebook</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6" data-i18n="footer_newsletter">Newsletter</h4>
+                    <p class="text-gray-500 text-sm mb-4" data-i18n="footer_newsletter_desc">Subscribe for seasonal updates and exclusive offers.</p>
+                    <div class="flex gap-2">
+                        <input class="bg-[#181611] border border-[#393328] text-white text-sm rounded-lg px-4 py-2 w-full focus:outline-none focus:border-primary" placeholder="Email address" type="email"/>
+                        <button class="bg-primary text-background-dark p-2 rounded-lg hover:bg-yellow-500 transition-colors">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-[#393328] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-xs">© 2024 Abu Khaled Village. All rights reserved.</p>
+                <div class="flex gap-6 text-gray-600 text-xs">
+                    <a class="hover:text-gray-400" href="#" data-i18n="footer_privacy">Privacy Policy</a>
+                    <a class="hover:text-gray-400" href="#" data-i18n="footer_terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
