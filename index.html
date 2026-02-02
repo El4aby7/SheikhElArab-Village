@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Abu Khaled Village - Authentic Middle Eastern Experience</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eca413",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221c10",
+                        "charcoal": "#181611",
+                        "sienna": "#8B4513",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for horizontal scrolling */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden antialiased selection:bg-primary selection:text-white transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-[#393328]">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-10 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 text-white">
+                    <div class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined text-2xl">kebab_dining</span>
+                    </div>
+                    <h2 class="text-white text-xl font-bold tracking-tight" data-i18n="brand_name">Abu Khaled Village</h2>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="menu.html" data-i18n="nav_menu">Menu</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="#" data-i18n="nav_story">Our Story</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="reservations.html" data-i18n="nav_private_tents">Private Tents</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="#" data-i18n="nav_contact">Contact</a>
+                </div>
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 text-white hover:text-primary transition-colors rounded-full hover:bg-white/10" aria-label="Toggle Dark Mode">
+                        <span class="material-symbols-outlined">dark_mode</span>
+                    </button>
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" class="p-2 text-white hover:text-primary transition-colors rounded-full hover:bg-white/10 text-sm font-bold" aria-label="Toggle Language">
+                        AR
+                    </button>
+
+                    <button class="hidden sm:flex bg-primary hover:bg-yellow-500 text-background-dark px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-[0_0_15px_rgba(236,164,19,0.3)]" data-i18n="btn_order">
+                        Order Online
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-white">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section (Video Simulation) -->
+    <header class="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image acting as Video Poster -->
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center animate-slow-zoom" data-alt="Close up of meat sizzling on a charcoal grill with sparks flying" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0YTG4W15K5p5i7w8zcg0nJMe6k4uuErZY_HwKJO0khRkuilXe2qKg6pk9xy-xpjLtsLKsKfUQE-uQ4rT6nQzIyJHavDwnRRIjzZABUYeeX_owM3O0nheluVe_bdUzQeIVQbUq1nLlKACTWo9o1KV8m6fpPrj332uBRAlJ2TX1V4I8emo6VNYi0NPjmhL3Ndu6hufrd5VLibM6bDb1-wQ_RCQzUeFS0yNhmzQ_Y1rx7jcfjqgoGd-cUuq3QRqsPRSfvmK7_xYHxFz9");'>
+            </div>
+            <!-- Video Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-black/40"></div>
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-4 flex flex-col items-center text-center mt-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm" data-i18n="hero_badge">
+                Authentic Middle Eastern Flavors
+            </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight mb-6 max-w-4xl drop-shadow-2xl">
+                <span data-i18n="hero_title_1">The Art of</span> <br/>
+                <span class="text-primary" data-i18n="hero_title_2">Fire &amp; Spice</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-10 font-medium leading-relaxed drop-shadow-lg" data-i18n="hero_desc">
+                Experience the taste of the desert in the heart of the city.
+                Slow-cooked Mandi, smoky Egyptian BBQ, and authentic Bedouin hospitality.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="reservations.html" class="flex items-center justify-center gap-2 bg-primary hover:bg-yellow-500 text-background-dark h-14 px-8 rounded-lg text-base font-bold transition-all shadow-[0_0_20px_rgba(236,164,19,0.4)]">
+                    <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                    <span data-i18n="btn_book_tent">Book a Private Tent</span>
+                </a>
+                <a href="menu.html" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 h-14 px-8 rounded-lg text-base font-bold transition-all">
+                    <span data-i18n="btn_view_menu">View Full Menu</span>
+                </a>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
+            <span class="material-symbols-outlined text-3xl">keyboard_arrow_down</span>
+        </div>
+    </header>
+    <!-- Main Content Container -->
+    <main class="relative z-10 bg-background-light dark:bg-background-dark text-charcoal dark:text-white transition-colors duration-300">
+        <!-- Signature Dishes Section -->
+        <section class="py-20 md:py-24 border-t border-[#393328]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <h2 class="text-primary text-sm font-bold uppercase tracking-widest mb-2" data-i18n="section_specialties">Our Specialties</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold dark:text-white text-charcoal" data-i18n="section_charcoal">From the Charcoal Pit</h3>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="size-10 rounded-full border border-current flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <button class="size-10 rounded-full bg-primary text-background-dark flex items-center justify-center hover:bg-yellow-500 transition-colors">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Horizontal Scroll Container -->
+                <div class="flex overflow-x-auto hide-scrollbar gap-6 pb-4 snap-x snap-mandatory">
+                    <!-- Card 1 -->
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center group cursor-pointer">
+                        <div class="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all z-10"></div>
+                            <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Platter of slow cooked lamb mandi on yellow rice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgB8ebCWjKGt2FeCW9_NAm6_8Jo20ZZPmvy0FUQCptgJ9RbtN2HBJaoOpNhgt4SNy96htd0ZIS0ESq3736E2ANMtqXGQBQ-RnDjoYdXWZeH9oEMfNkA2wh7L8kea_YLEukwzHpVHaFoqMlG5QUqoTynGVDV695eM1t6CPTvqdF6P3WQkStP1gEszot8oI4osxeHDPPTyFg-zmYOamGHVjn55vnxV9F92Y7eQ3RU7pbmis0H_2MQE8hk5694i3pHa1M-chvZUa1J-Xf");'>
+                            </div>
+                            <div class="absolute top-4 right-4 z-20 bg-background-dark/80 backdrop-blur-sm px-3 py-1 rounded text-primary font-bold shadow-lg">28 L.E</div>
+                        </div>
+                        <h4 class="text-xl font-bold dark:text-white text-charcoal mb-1 group-hover:text-primary transition-colors" data-i18n="dish_mandi">Signature Mandi</h4>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm" data-i18n="dish_mandi_desc">Slow-cooked lamb shank served over aromatic saffron rice with raisin and nuts.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center group cursor-pointer">
+                        <div class="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all z-10"></div>
+                            <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Grilled beef kofta skewers with charred vegetables" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHoRQVSkVs-5xfqR4pp1hHcvZASc5ux27zOZ4X8Z8-5Br4d_ISKFHjY5GB6cHYDBlm6rGGQMop2_cZCNMTIkiimQ4qVqRfdlZoszpSxqQymM_FTt1NKPex5tHjet6rolPrtdbfPEnEhO5VWNl_FSgzgZKwWHC4tR03vnSah2BivdRSQ3Rgm8mlFSOhxQG5MOpl-AarNSrLc22YdfBK7xnbDWqqfS7q13H6fJUMGjCjRGSGzu4htPs9lxEdXOHxDWok3_k9e_qb5KVY");'>
+                            </div>
+                            <div class="absolute top-4 right-4 z-20 bg-background-dark/80 backdrop-blur-sm px-3 py-1 rounded text-primary font-bold shadow-lg">22 L.E</div>
+                        </div>
+                        <h4 class="text-xl font-bold dark:text-white text-charcoal mb-1 group-hover:text-primary transition-colors" data-i18n="dish_kofta">Egyptian Kofta</h4>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm" data-i18n="dish_kofta_desc">Spiced minced meat skewers grilled to perfection over open charcoal flame.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center group cursor-pointer">
+                        <div class="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all z-10"></div>
+                            <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Grilled chicken on hot stones madhbi style" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7G2Fo3Aux47Xzpg8zQE9RgjTNhHJ49bHfOf62iTI3EfU50yuOGcTcjvcJWfCCEdqgbNJASFU85-HIoDSk4s8RkJmVakTAv1dwRVcFKAalFCOQ4WEcZcrDxQx7BjvchR5hq2pHDMHy153Eevqj0RWAkYKWslGmezzKTrg81PhvMVPzcvi8kBYJdy4nlXRUO0eToU0hv99KZPUSuRfBV9ctuH3_VdjbglGR6_OnyQP3ggFDc7ZiIvd8xBL4ohsNbDYm-VdJaHp9HpWq");'>
+                            </div>
+                            <div class="absolute top-4 right-4 z-20 bg-background-dark/80 backdrop-blur-sm px-3 py-1 rounded text-primary font-bold shadow-lg">24 L.E</div>
+                        </div>
+                        <h4 class="text-xl font-bold dark:text-white text-charcoal mb-1 group-hover:text-primary transition-colors" data-i18n="dish_madhbi">Chicken Madhbi</h4>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm" data-i18n="dish_madhbi_desc">Whole chicken grilled on hot stones, served with spicy tomato salsa (Sahaweq).</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="min-w-[300px] md:min-w-[380px] snap-center group cursor-pointer">
+                        <div class="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all z-10"></div>
+                            <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Freshly baked pita bread in a basket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9_cZyMTZqvuV000fYU9B8Tf0CsFg1CJZJLZph-0LpoNICxBqeHrSXTKTnacnRtldRrPdkqe0GVztvHg7hlmxo2uHCQbx56lZPqaO2gg2dC5BNzL2_HaYrGk8wt0DwHWn9ogJ-So443b_fK2piTmLa0rf63uqhqvesVYj89klAXZ7T5UBSdxrzDWMSbZJpS33ek87xaS5-R_qBKGB2q8Ohetog4c4UXQ0xIhPhM7RjsCHUQMDH4raIZgAq8VdYncHF7vRVI5zjmk5A");'>
+                            </div>
+                            <div class="absolute top-4 right-4 z-20 bg-background-dark/80 backdrop-blur-sm px-3 py-1 rounded text-primary font-bold shadow-lg">8 L.E</div>
+                        </div>
+                        <h4 class="text-xl font-bold dark:text-white text-charcoal mb-1 group-hover:text-primary transition-colors" data-i18n="dish_bread">Bedouin Bread Basket</h4>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm" data-i18n="dish_bread_desc">Selection of fresh, wood-fired flatbreads served with hummus and baba ganoush.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Experience Section -->
+        <section class="py-20 bg-[#181611]">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Text Side -->
+                    <div class="order-2 lg:order-1 flex flex-col gap-6">
+                        <div>
+                            <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4" data-i18n="exp_badge">
+                                Atmosphere
+                            </span>
+                            <h2 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4" data-i18n="exp_title">
+                                The Bedouin <br/> Tent Experience
+                            </h2>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-6" data-i18n="exp_desc">
+                                Escape the noise and relax in our authentic private tents. Adorned with traditional kilim carpets, warm lantern lighting, and low Majlis seating, our tents are designed for communal feasting and intimate gatherings.
+                            </p>
+                            <ul class="flex flex-col gap-3 mb-8">
+                                <li class="flex items-center gap-3 text-gray-300">
+                                    <span class="material-symbols-outlined text-primary">check_circle</span>
+                                    <span data-i18n="exp_feat_1">Private seating for groups of 4-12</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-300">
+                                    <span class="material-symbols-outlined text-primary">check_circle</span>
+                                    <span data-i18n="exp_feat_2">Traditional Arabic tea service</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-300">
+                                    <span class="material-symbols-outlined text-primary">check_circle</span>
+                                    <span data-i18n="exp_feat_3">Ambient desert soundscapes</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="w-fit flex items-center justify-center gap-2 bg-primary hover:bg-yellow-500 text-background-dark h-12 px-6 rounded-lg text-sm font-bold transition-all">
+                            <span data-i18n="btn_explore">Explore Ambience</span>
+                            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </button>
+                    </div>
+                    <!-- Image Side -->
+                    <div class="order-1 lg:order-2 relative">
+                        <div class="aspect-video lg:aspect-square w-full rounded-2xl overflow-hidden relative shadow-2xl">
+                            <div class="w-full h-full bg-cover bg-center" data-alt="Interior of a luxury bedouin tent with red cushions and lanterns" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrMlbnVrAzmqBesS7h0mhlSxTrgS3DFBqPDKa8M4TAQKVRAH4phsq5AIB0HRsh-p8BNjMML8ITOA1cA2BtU2hWWKO6Y2WXrS8jXcGb6zxX5NZv5JBgmso-clR8zqHCzVcN17W3B5NcqGTL23jDp0D0EZ8tUMogmrM8-6eB_2FtAQrtYOSLy1jRTPCNo0GWxSwysGdcdWyq0zXUi5LCXGNdK9E3dwH5RCCMayxyg3uyMjEQ9H6SxXHPYblOxiiYTwsEURl5ikWu81iC");'>
+                            </div>
+                            <!-- Decorative border/frame effect -->
+                            <div class="absolute inset-4 border border-white/20 rounded-xl pointer-events-none"></div>
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-[#221c10] p-6 rounded-xl shadow-xl hidden md:block border border-[#393328]">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-primary/20 p-3 rounded-full text-primary">
+                                    <span class="material-symbols-outlined text-3xl">star</span>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-white">4.9/5</p>
+                                    <p class="text-xs text-gray-400 uppercase tracking-wider" data-i18n="rating_label">Customer Rating</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA / Map Section -->
+        <section class="relative h-[500px] flex items-center">
+            <div class="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-40" data-alt="Map view or abstract desert sand texture" data-location="Dubai Desert" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCU7tihzQW3e_X7Ym1EsYUmvncGJVInSc71aJjkIcTtVbXOQmI-iQGl75eKdjx8ZHCmcOMdCt6ihPYdRQpuyCV7fYjS0j4lZ6TpFMCeTklYlOjnFWStiJVGyAB8Xd8miF272_r2W_HlPYNRows9QZMyhFRzMAnvfc-p6zAFOZZf8PaxxwhIVzId9RVj5dFYXcsbG_uOQwD4CBbZYDa0mc4Ry9y2Oqug4-Map_TdFgnK2jrZGWAhrObsCzFVwLvv9nD--7CipZOppVG1");'>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/90 to-transparent"></div>
+            <div class="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-10 w-full">
+                <div class="max-w-lg">
+                    <h2 class="text-4xl font-bold text-white mb-6" data-i18n="find_us">Find us in the Dunes</h2>
+                    <div class="space-y-6 text-gray-300 mb-8">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+                            <div>
+                                <p class="text-white font-bold" data-i18n="brand_name">Abu Khaled Village</p>
+                                <p data-i18n="address_1">123 Desert Road, Al Quoz Industrial Area 4</p>
+                                <p data-i18n="address_2">Dubai, United Arab Emirates</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary">schedule</span>
+                            <div>
+                                <p><span class="text-white font-bold" data-i18n="hours_label">Daily:</span> 12:00 PM - 2:00 AM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary">call</span>
+                            <div>
+                                <p>+971 4 123 4567</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary hover:text-background-dark h-12 px-6 rounded-lg text-sm font-bold transition-all" data-i18n="btn_directions">
+                        Get Directions
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-[#12100c] border-t border-[#393328] pt-16 pb-8">
+            <div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div class="col-span-1 md:col-span-1">
+                        <div class="flex items-center gap-3 text-white mb-6">
+                            <div class="flex items-center justify-center size-8 rounded-full bg-primary text-background-dark">
+                                <span class="material-symbols-outlined text-lg">kebab_dining</span>
+                            </div>
+                            <h2 class="text-white text-lg font-bold" data-i18n="brand_name">Abu Khaled Village</h2>
+                        </div>
+                        <p class="text-gray-500 text-sm leading-relaxed" data-i18n="footer_desc">
+                            Bringing authentic desert flavors to the modern city. Experience the warmth of Bedouin hospitality.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-6" data-i18n="footer_links">Quick Links</h4>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li><a class="hover:text-primary transition-colors" href="menu.html" data-i18n="nav_menu">Our Menu</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="reservations.html" data-i18n="nav_private_tents">Private Tents</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#" data-i18n="footer_catering">Catering</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#" data-i18n="footer_gifts">Gift Cards</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-6" data-i18n="footer_connect">Connect</h4>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Facebook</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-6" data-i18n="footer_newsletter">Newsletter</h4>
+                        <p class="text-gray-500 text-sm mb-4" data-i18n="footer_newsletter_desc">Subscribe for seasonal updates and exclusive offers.</p>
+                        <div class="flex gap-2">
+                            <input class="bg-[#181611] border border-[#393328] text-white text-sm rounded-lg px-4 py-2 w-full focus:outline-none focus:border-primary" placeholder="Email address" type="email"/>
+                            <button class="bg-primary text-background-dark p-2 rounded-lg hover:bg-yellow-500 transition-colors">
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-[#393328] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-600 text-xs">© 2024 Abu Khaled Village. All rights reserved.</p>
+                    <div class="flex gap-6 text-gray-600 text-xs">
+                        <a class="hover:text-gray-400" href="#" data-i18n="footer_privacy">Privacy Policy</a>
+                        <a class="hover:text-gray-400" href="#" data-i18n="footer_terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
