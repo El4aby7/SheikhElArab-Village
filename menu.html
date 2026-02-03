@@ -86,12 +86,18 @@
                 </svg>
             </div>
             <!-- Sticky Navigation / Header inside Right Panel -->
-            <header class="sticky top-0 z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-stone-200 dark:border-stone-800 px-6 py-4 lg:px-12 flex items-center justify-between shrink-0">
+            <header class="sticky top-0 z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-stone-200 dark:border-stone-800 px-6 py-4 lg:px-12 flex items-center justify-between shrink-0 relative">
                 <div class="lg:hidden flex items-center gap-2 text-primary">
                     <span class="material-symbols-outlined">restaurant_menu</span>
                     <span class="font-bold text-sand-text dark:text-white" data-i18n="brand_name">Sheikh El Arab Village</span>
                 </div>
-                <nav class="hidden sm:flex items-center gap-6 ml-auto lg:ml-0 lg:w-full lg:justify-end">
+
+                <!-- Mobile Menu Button (Menu Page specific style) -->
+                <button id="mobile-menu-btn" class="lg:hidden ml-auto text-sand-text dark:text-white p-2">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <nav class="hidden lg:flex items-center gap-6 ml-auto lg:w-full lg:justify-end">
                     <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html" data-i18n="nav_home">Home</a>
                     <a class="text-sm font-medium hover:text-primary transition-colors" href="story.html" data-i18n="nav_story">Our Story</a>
                     <a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html" data-i18n="nav_contact">Contact</a>
@@ -109,6 +115,16 @@
                         Book a Table
                     </a>
                 </nav>
+
+                <!-- Mobile Menu Container (Absolute positioned below header) -->
+                <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-background-light dark:bg-background-dark border-b border-stone-200 dark:border-stone-800 shadow-lg z-50">
+                    <div class="flex flex-col p-4 gap-4 text-center">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html" data-i18n="nav_home">Home</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="story.html" data-i18n="nav_story">Our Story</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html" data-i18n="nav_contact">Contact</a>
+                        <a href="reservations.html" class="bg-primary text-white text-sm font-bold py-2 px-5 rounded-md" data-i18n="btn_book_table">Book a Table</a>
+                    </div>
+                </div>
             </header>
             <!-- Scrollable Content Area -->
             <div class="flex-1 overflow-y-auto custom-scrollbar px-6 lg:px-16 py-8 relative z-10">

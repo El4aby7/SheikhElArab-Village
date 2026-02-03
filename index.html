@@ -76,8 +76,20 @@
                         Order Online
                     </button>
                     <!-- Mobile Menu Button -->
-                    <button class="md:hidden text-white">
+                    <button id="mobile-menu-btn" class="md:hidden text-white">
                         <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu Container -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-background-dark border-t border-[#393328] shadow-lg">
+                <div class="flex flex-col p-4 gap-4">
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="menu.html" data-i18n="nav_menu">Menu</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="story.html" data-i18n="nav_story">Our Story</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="reservations.html" data-i18n="nav_private_tents">Private Tents</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-semibold" href="contact.html" data-i18n="nav_contact">Contact</a>
+                    <button class="sm:hidden w-full bg-primary hover:bg-yellow-500 text-background-dark px-5 py-2.5 rounded-lg text-sm font-bold transition-all" data-i18n="btn_order">
+                        Order Online
                     </button>
                 </div>
             </div>
